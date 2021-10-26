@@ -14,7 +14,6 @@ class ShowTweets extends Component
     {
         $tweets = Tweet::with('user')->get();
 
-
         return view('livewire.show-tweets', [
             'tweets' => $tweets
         ]);
