@@ -16,4 +16,9 @@
         {{ $tweet->user->name }} - {{ $tweet->conteudo }}
         <br>
     @endforeach
+
+    <hr>
+    <div>
+        {{$tweets->links()}}
+    </div>
 </div>
