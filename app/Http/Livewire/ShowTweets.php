@@ -18,7 +18,9 @@ class ShowTweets extends Component
 
     public function render()
     {
-        $tweets = Tweet::with('user')->paginate(2);
+        $tweets = Tweet::with('user')
+                        ->latest()
+                        ->paginate(10);
 
         return view('livewire.show-tweets', [
             'tweets' => $tweets
@@ -28,11 +30,13 @@ class ShowTweets extends Component
     public function create() 
     {
         $this->validate();
-        Tweet::create([
-            'conteudo' => $this->conteudo,
-            'user_id'  => 1
+        auth()        
+            ->user()
+            ->tweets()
+            ->create([
+            'conteudo' => $this->conteudo
         ]);
-
+        
         $this->conteudo = '';
     }
 }
