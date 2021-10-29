@@ -12,10 +12,10 @@ Route::get('/', function () {
 
 Route::get('/tweets', ShowTweets::class)
             ->middleware('auth')
-            ->name('upload.photo.user');
+            ->name('tweets.index');
 Route::get('/upload', UploadPhoto::class)
             ->middleware('auth')
-            ->name('tweets.index');
+            ->name('upload.photo.user');
 Route::middleware(['auth:sanctum', 'verified'])->get('/dashboard', function () {
     return view('dashboard');
 })->name('dashboard');

@@ -12,6 +12,6 @@
             {{$message}}
         @enderror
         <br>
-        <button type="submit"> Upload Photo</button>
+        <button type="submit">Upload Photo</button>
     </form>
 </div>
